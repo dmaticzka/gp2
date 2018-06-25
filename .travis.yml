@@ -20,15 +20,13 @@ install:
   # Useful for debugging any issues with conda
   - conda info -a
 
-  # Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION
-  - source activate test-environment
   # bioconda setup
   - conda config --add channels defaults
   - conda config --add channels conda-forge
   - conda config --add channels bioconda
   - conda config --add channels dmaticzka
-  - conda install flake8 pytest pytest-cov scripttest --file requirements.txt
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION flake8 pytest pytest-cov scripttest --file requirements.txt
+  - source activate test-environment
 
 script:
   - flake8 gp2 test --ignore=E501

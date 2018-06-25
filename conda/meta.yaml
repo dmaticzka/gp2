@@ -14,10 +14,10 @@ build:
 
 requirements:
   build:
-      - python
+      - python=3
       - eden>=3.0
   run:
-      - python
+      - python=3
       - eden>=3.0
 
 test:

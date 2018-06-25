@@ -1,2 +1,1 @@
-python=3
 eden>=3.0

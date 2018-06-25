@@ -1,0 +1,30 @@
+package:
+  name: gp2
+  version: {{ environ['VERSION'] }}
+
+source:
+    path: ../
+
+build:
+  script_env:
+   - VERSION
+   - CONDA_BLD_PATH
+   - TRAVIS_PULL_REQUEST
+   - TRAVIS_PYTHON_VERSION
+
+requirements:
+  build:
+      - python
+      - eden>=3.0
+  run:
+      - python
+      - eden>=3.0
+
+test:
+  imports:
+    - eden
+
+about:
+  home: https://github.com/dmaticzka/gp2
+  license: MIT
+  summary: 'gp2'
